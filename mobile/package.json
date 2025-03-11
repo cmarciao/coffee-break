@@ -12,11 +12,15 @@
     "expo": "~52.0.37",
     "expo-status-bar": "~2.0.1",
     "react": "18.3.1",
-    "react-native": "0.76.7"
+    "react-native": "0.76.7",
+    "react-native-svg": "15.8.0",
+    "styled-components": "^6.1.15",
+    "expo-splash-screen": "~0.29.22"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@types/react": "~18.3.12",
+    "@types/styled-components-react-native": "^5.2.5",
     "typescript": "^5.3.3"
   },
   "private": true
