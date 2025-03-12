@@ -19,6 +19,7 @@ export const InputContent = styled.View<InputContentProps>`
 `;
 
 export const InputForm = styled.TextInput`
+    color: #FFF;
 `;
 
 export const InputIcon = styled.Pressable`

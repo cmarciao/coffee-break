@@ -23,9 +23,10 @@ export const Form = styled.View`
     gap: 16px;
 `;
 
-export const DragAndDrop = styled.View`
+export const DragAndDrop = styled.TouchableOpacity`
     width: 100%;
     height: 280px;
+    overflow: hidden;
     align-items: center;
     justify-content: center;
     gap: 6px;

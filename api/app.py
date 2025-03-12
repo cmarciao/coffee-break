@@ -17,9 +17,12 @@ CORS(app)
 
 blockchain = Blockchain(difficulty=2)
 
-@app.route('/classifier', methods=['POST'])
+@app.route('/classifier', methods=['GET', 'POST'])
 
 def classifier():
+    if (request.method == 'GET'):
+        return 'Hello World!'
+
     if request.method == 'POST':
         data = request.get_json()
 
@@ -60,4 +63,4 @@ def classifier():
     
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000)
