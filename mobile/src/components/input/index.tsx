@@ -13,7 +13,6 @@ type InputProps = {
 
 export const Input = forwardRef<InputRef, InputProps>(({ label, errorMessage, ...props }: InputProps, ref) => {
     const [isFocused, setIsFocused] = useState(false);
-    const [isToShowPassword, setIsToShowPassword] = useState(false);
 
     return (
         <View>
@@ -28,15 +27,7 @@ export const Input = forwardRef<InputRef, InputProps>(({ label, errorMessage, ..
                     onFocus={() => setIsFocused(true)}
                     onBlur={() => setIsFocused(false)}
                     {...props}
-                    secureTextEntry={props.secureTextEntry ? !isToShowPassword : false}
                 />
-
-                {props.secureTextEntry && (
-                    <InputIcon onPress={() => setIsToShowPassword((prevState) => !prevState)}>
-                        {isToShowPassword && <Feather name="eye-off" size={24} color={'#666'} />}
-                        {!isToShowPassword && <Feather name="eye" size={24} color={'#666'} />}
-                    </InputIcon>
-                )}
             </InputContent>
 
 
