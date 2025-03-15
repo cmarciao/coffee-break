@@ -53,16 +53,10 @@ Se precisar parar o projeto, use:
 docker-compose down
 ```
 
-## ⚙ **Configuração de IP via `.env`**
-Antes de rodar o contêiner, edite o arquivo **.env** na raiz do projeto mobile e defina o IP local da máquina:
-```sh
-EXPO_PUBLIC_API_URL=192.0.0.1
-```
-Isso garante que o Expo consiga se conectar corretamente ao backend ou Metro Bundler.
-
-Se precisar verificar o IP da sua máquina, no terminal execute:
-- **Windows (CMD/Powershell):** `ipconfig`
-- **Mac/Linux:** `ifconfig` ou `ip a`
+## ⚙ **Configuração de IP **
+Dentro do arquivo mobile/services/api.ts
+Coloque seu IP no local indicado.
+`const baseURL = 'http://<SEU_IP>:5000';`
 
 ---
 
