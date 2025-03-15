@@ -20,9 +20,6 @@ blockchain = Blockchain(difficulty=2)
 @app.route('/classifier', methods=['GET', 'POST'])
 
 def classifier():
-    if (request.method == 'GET'):
-        return 'Hello World!'
-
     if request.method == 'POST':
         data = request.get_json()
 
