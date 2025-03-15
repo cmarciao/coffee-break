@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ActionSheetIOS, Alert, Platform } from "react-native";
 import Toast from "react-native-toast-message";
 import { readAsStringAsync, EncodingType } from 'expo-file-system'
-import { expressApi } from "@/services/api";
+import { api } from "@/services/api";
 import { sortClassifications } from "@/utils/sort-classifications";
 import { openImagePicker } from "@/utils/image-picker";
 import { CameraPermissionDenied } from "@/errors/camera-permission-denied";
@@ -20,7 +20,7 @@ export function useUploadImage() {
             encoding: EncodingType.Base64,
         });
         try {
-            const response = await expressApi.post("/classifier", { plantId, base64Image: `data:image/png;base64,${base64Image}` })
+            const response = await api.post("/classifier", { plantId, base64Image: `data:image/png;base64,${base64Image}` })
             setIsOpenResultClassificationModal(true);
             const sortedClassifications = Object.entries(sortClassifications(response.data));
             setClassifications(sortedClassifications);
