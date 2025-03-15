@@ -53,10 +53,16 @@ Se precisar parar o projeto, use:
 docker-compose down
 ```
 
-## ⚙ **Configuração de IP **
-Dentro do arquivo mobile/services/api.ts
-Coloque seu IP no local indicado.
-`const baseURL = 'http://<SEU_IP>:5000';`
+## ⚙ **Configuração de IP via `.env`**
+Antes de rodar o contêiner, edite o arquivo **.env** na raiz do projeto mobile e defina o IP local da máquina:
+```sh
+EXPO_PUBLIC_API_URL=192.0.0.1
+```
+Isso garante que o Expo consiga se conectar corretamente ao backend ou Metro Bundler.
+
+Se precisar verificar o IP da sua máquina, no terminal execute:
+- **Windows (CMD/Powershell):** `ipconfig`
+- **Mac/Linux:** `ifconfig` ou `ip a`
 
 ---
 
@@ -82,4 +88,3 @@ Happy coding! 🎉
 
 ## 📌 **Considerações Finais**
 Este projeto foi inspirado e teve como referência o repositório [coffee-break](https://github.com/laisdib/coffee-break/tree/main) de [Lais Dib](https://github.com/laisdib). Algumas ideias e estruturas foram adaptadas para atender às necessidades específicas deste ambiente Docker com Expo Go. Agradecimentos pela contribuição à comunidade! 😊
-
