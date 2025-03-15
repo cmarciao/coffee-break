@@ -29,12 +29,14 @@ export function useUploadImage() {
                 text1: 'Tudo certo!',
                 text2: 'Imagem classificada com sucesso!',
             });
-        } catch {
+        } catch (error) {
             Toast.show({
                 type: 'error',
                 text1: 'Error no envio',
                 text2: 'Algum erro aconteceu, por favor, tente novamente.',
             });
+            console.log({ error })
+
         } finally {
             setIsSubmittingImage(false);
         };
